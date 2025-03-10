@@ -1,17 +1,17 @@
 {
-  "name": "@iqbspecs/response",
-  "version": "1.4.0",
+  "name": "@iqbspecs/coding-scheme",
+  "version": "3.2.0",
   "author": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
   "license": "CC0 1.0",
-  "description": "Data interface: response",
+  "description": "Data interface: coding-scheme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iqb-specifications/response.git"
+    "url": "git+https://github.com/iqb-specifications/coding-scheme.git"
   },
   "bugs": {
-    "url": "https://github.com/iqb-specifications/response/issues"
+    "url": "https://github.com/iqb-specifications/coding-scheme/issues"
   },
-  "homepage": "https://github.com/iqb-specifications/response#readme",
+  "homepage": "https://github.com/iqb-specifications/coding-scheme#readme",
   "main": "index.js",
   "types": "index.d.ts"
 }

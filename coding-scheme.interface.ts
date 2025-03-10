@@ -88,6 +88,7 @@ export interface VariableCodingData {
   codes: CodeData[]
 }
 
+// todo: not interface but class, so better extract in separate file
 export class CodingScheme {
   variableCodings: VariableCodingData[] = [];
 

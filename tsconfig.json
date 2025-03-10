@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "strictNullChecks": true,
+    "strict": true,
+    "target": "ES2016",
+    "module": "ES2020",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "lib": ["es2016", "dom"],
+    "rootDir": "."
+  },
+  "include": ["*.interface.ts"],
+  "exclude": ["test.ts", "dist","public"]
+}

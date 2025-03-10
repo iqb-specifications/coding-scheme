@@ -1,0 +1,17 @@
+{
+  "name": "@iqbspecs/response",
+  "version": "1.4.0",
+  "author": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
+  "license": "CC0 1.0",
+  "description": "Data interface: response",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iqb-specifications/response.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iqb-specifications/response/issues"
+  },
+  "homepage": "https://github.com/iqb-specifications/response#readme",
+  "main": "index.js",
+  "types": "index.d.ts"
+}

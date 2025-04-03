@@ -1,10 +1,9 @@
 {
-  "version": "2.3",
-  "variables":[
+  "variableCodings":[
     {
       "id": "M1",
+      "alias": "M1",
       "label": "",
-      "pattern": null,
       "sourceType": "BASE",
       "deriveSources": [],
       "processing": [
@@ -56,7 +55,6 @@
     {
       "id": "M3",
       "label": "",
-      "pattern": null,
       "sourceType": "BASE",
       "deriveSources": [],
       "processing": [
@@ -68,7 +66,6 @@
     {
       "id": "M4",
       "label": "",
-      "pattern": null,
       "sourceType": "BASE",
       "deriveSources": [],
       "processing": [],
@@ -78,7 +75,6 @@
     {
       "id": "MD1",
       "label": "",
-      "pattern": null,
       "sourceType": "CONCAT_CODE",
       "deriveSources": ["M1", "MD2"],
       "processing": [],
@@ -104,7 +100,6 @@
     {
       "id": "MD2",
       "label": "",
-      "pattern": null,
       "sourceType": "COPY_VALUE",
       "deriveSources": ["M2"],
       "processing": [],
@@ -139,5 +134,6 @@
         }
       ]
     }
-  ]
+  ],
+  "version": "3.2"
 }

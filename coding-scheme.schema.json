@@ -256,6 +256,6 @@
   },
   "required": [
     "version",
-    "variables"
+    "variableCodings"
   ]
 }

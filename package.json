@@ -5,6 +5,7 @@
   "description": "Data interface for coding assessment output",
   "scripts": {
     "test_schema": "jest test ./coding-scheme.schema.json ./test",
+    "validate-schema": "test-schema test/test_valid",
     "generate_docs": "asyncapi generate fromTemplate ./make_doc/asyncapi.yaml @asyncapi/html-template --param config=make_doc/asyncapi.config.json -o ./public --force-write --use-new-generator && cat make_doc/add.css >> ./public/css/global.min.css",
     "prepare_publish": "rm -rf dist/* && tsc --module commonjs && cp ./package_npm.json ./dist/package.json && cp ./README.md ./dist",
     "npm_publish": "cd dist && npm publish --access public"
@@ -44,6 +45,7 @@
     "ajv": "^8.14.0",
     "jest": "^29.7.0",
     "ts-jest": "^29.1.2",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "@iqbspecs/validate-json": "^0.4.0"
   }
 }

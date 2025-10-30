@@ -1,5 +1,5 @@
 {
-  "variableCodings":[
+  "variableCodings": [
     {
       "id": "M1",
       "alias": "M1",
@@ -34,14 +34,18 @@
           "manualInstruction": ""
         },
         {
-          "id": null,
+          "id": "INVALID",
           "type": "UNSET",
           "label": "",
           "score": 0,
-          "rules": [
+          "ruleSets": [
             {
-              "method": "IS_TRUE",
-              "parameters": []
+              "rules": [
+                {
+                  "method": "IS_TRUE",
+                  "parameters": []
+                }
+              ]
             }
           ],
           "manualInstruction": ""
@@ -76,7 +80,10 @@
       "id": "MD1",
       "label": "",
       "sourceType": "CONCAT_CODE",
-      "deriveSources": ["M1", "MD2"],
+      "deriveSources": [
+        "M1",
+        "MD2"
+      ],
       "processing": [],
       "manualInstruction": "",
       "codes": [
@@ -85,11 +92,15 @@
           "type": "FULL_CREDIT",
           "label": "",
           "score": 0,
-          "rules": [
+          "ruleSets": [
             {
-              "method": "MATCH",
-              "parameters": [
-                "22222"
+              "rules": [
+                {
+                  "method": "MATCH",
+                  "parameters": [
+                    "22222"
+                  ]
+                }
               ]
             }
           ],
@@ -101,7 +112,9 @@
       "id": "MD2",
       "label": "",
       "sourceType": "COPY_VALUE",
-      "deriveSources": ["M2"],
+      "deriveSources": [
+        "M2"
+      ],
       "processing": [],
       "manualInstruction": "",
       "codes": [
@@ -110,11 +123,15 @@
           "type": "UNSET",
           "label": "",
           "score": 0,
-          "rules": [
+          "ruleSets": [
             {
-              "method": "MATCH",
-              "parameters": [
-                "22222"
+              "rules": [
+                {
+                  "method": "MATCH",
+                  "parameters": [
+                    "22222"
+                  ]
+                }
               ]
             }
           ],
@@ -124,10 +141,14 @@
           "id": 2,
           "label": "",
           "score": 1,
-          "rules": [
+          "ruleSets": [
             {
-              "method": "IS_EMPTY",
-              "parameters": []
+              "rules": [
+                {
+                  "method": "IS_EMPTY",
+                  "parameters": []
+                }
+              ]
             }
           ],
           "manualInstruction": ""

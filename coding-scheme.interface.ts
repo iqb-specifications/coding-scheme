@@ -70,7 +70,7 @@ export type ProcessingParameterType =
     | 'REPLAY_REQUIRED'
     | 'ATTACHMENT'
     | 'CODER_TRAINING_REQUIRED';
-export type CodeModelType = 'NONE' | 'RULES_ONLY' | 'MANUAL_ONLY';
+export type CodeModelType = 'MANUAL_AND_RULES' | 'RULES_ONLY' | 'MANUAL_ONLY';
 export type CodeType =
     | 'UNSET'
     | 'FULL_CREDIT'
@@ -210,10 +210,10 @@ export class CodingScheme {
             [];
     if (
       valueProcessing &&
-            valueProcessing.includes('REMOVE_WHITE_SPACES')
+            valueProcessing.includes('IGNORE_ALL_SPACES')
     ) {
       valueProcessing = valueProcessing.filter(
-        vp => vp !== 'REMOVE_WHITE_SPACES'
+        vp => vp !== 'IGNORE_ALL_SPACES'
       );
       valueProcessing.push('IGNORE_ALL_SPACES');
     }
@@ -261,7 +261,7 @@ export class CodingScheme {
     }
     if (givenCoding.codeModel !== 'NONE') {
       newCoding.codeModel =
-                givenCoding.codeModel === 'MANUAL' ? 'MANUAL_ONLY' : 'NONE';
+                givenCoding.codeModel === 'MANUAL' ? 'MANUAL_ONLY' : 'MANUAL_AND_RULES';
     }
     if (givenCoding.codes && Array.isArray(givenCoding.codes)) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any

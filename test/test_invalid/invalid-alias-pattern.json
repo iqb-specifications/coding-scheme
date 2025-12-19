@@ -1,0 +1,10 @@
+{
+    "version": "1.0",
+    "variableCodings": [
+        {
+            "id": "V1",
+            "alias": "test@alias",
+            "sourceType": "BASE"
+        }
+    ]
+}

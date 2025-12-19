@@ -1,0 +1,79 @@
+{
+    "version": "3.0",
+    "variableCodings": [
+        {
+            "id": "complex_rules",
+            "sourceType": "BASE",
+            "fragmenting": "\\s+",
+            "codes": [
+                {
+                    "id": 1,
+                    "ruleSetOperatorAnd": true,
+                    "ruleSets": [
+                        {
+                            "valueArrayPos": 0,
+                            "ruleOperatorAnd": true,
+                            "rules": [
+                                {
+                                    "method": "MATCH",
+                                    "parameters": ["test"],
+                                    "fragment": 0
+                                },
+                                {
+                                    "method": "NUMERIC_RANGE",
+                                    "parameters": ["1", "10"],
+                                    "fragment": 1
+                                }
+                            ]
+                        },
+                        {
+                            "valueArrayPos": "ANY",
+                            "ruleOperatorAnd": false,
+                            "rules": [
+                                {
+                                    "method": "IS_EMPTY"
+                                },
+                                {
+                                    "method": "IS_NULL"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "ruleSetOperatorAnd": false,
+                    "ruleSets": [
+                        {
+                            "valueArrayPos": "ANY_OPEN",
+                            "rules": [
+                                {
+                                    "method": "MATCH_REGEX",
+                                    "parameters": [".*"]
+                                }
+                            ]
+                        },
+                        {
+                            "valueArrayPos": "SUM",
+                            "rules": [
+                                {
+                                    "method": "NUMERIC_MORE_THAN",
+                                    "parameters": ["100"]
+                                }
+                            ]
+                        },
+                        {
+                            "valueArrayPos": "LENGTH",
+                            "rules": [
+                                {
+                                    "method": "NUMERIC_MATCH",
+                                    "parameters": ["5"]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "version": "1.1",
+    "variableCodings": [
+        {
+            "id": "src_proc",
+            "sourceType": "SOLVER",
+            "sourceParameters": {
+                "solverExpression": "${x}+${y}",
+                "processing": [
+                    "TO_LOWER_CASE",
+                    "TO_NUMBER",
+                    "REMOVE_ALL_SPACES",
+                    "REMOVE_DISPENSABLE_SPACES",
+                    "TAKE_DISPLAYED_AS_VALUE_CHANGED",
+                    "TAKE_EMPTY_AS_VALID",
+                    "SORT",
+                    "TAKE_NOT_REACHED_AS_VALUE_CHANGED"
+                ]
+            },
+            "deriveSources": ["x", "y"]
+        }
+    ]
+}

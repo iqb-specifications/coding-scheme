@@ -1,0 +1,24 @@
+{
+    "version": "1.0",
+    "variableCodings": [
+        {
+            "id": "V1",
+            "sourceType": "BASE",
+            "codes": [
+                {
+                    "id": 1,
+                    "ruleSets": [
+                        {
+                            "valueArrayPos": 1.5,
+                            "rules": [
+                                {
+                                    "method": "IS_EMPTY"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

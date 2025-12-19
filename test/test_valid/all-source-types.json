@@ -1,0 +1,50 @@
+{
+    "version": "10.99",
+    "variableCodings": [
+        {
+            "id": "base_var",
+            "sourceType": "BASE"
+        },
+        {
+            "id": "base_no_value_var",
+            "sourceType": "BASE_NO_VALUE"
+        },
+        {
+            "id": "manual_var",
+            "sourceType": "MANUAL"
+        },
+        {
+            "id": "copy_value_var",
+            "sourceType": "COPY_VALUE",
+            "deriveSources": ["base_var"]
+        },
+        {
+            "id": "concat_code_var",
+            "sourceType": "CONCAT_CODE",
+            "deriveSources": ["base_var", "manual_var"]
+        },
+        {
+            "id": "sum_code_var",
+            "sourceType": "SUM_CODE",
+            "deriveSources": ["base_var"]
+        },
+        {
+            "id": "sum_score_var",
+            "sourceType": "SUM_SCORE",
+            "deriveSources": ["base_var", "manual_var"]
+        },
+        {
+            "id": "unique_values_var",
+            "sourceType": "UNIQUE_VALUES",
+            "deriveSources": ["base_var"]
+        },
+        {
+            "id": "solver_var",
+            "sourceType": "SOLVER",
+            "sourceParameters": {
+                "solverExpression": "${base_var}*2+${manual_var}"
+            },
+            "deriveSources": ["base_var", "manual_var"]
+        }
+    ]
+}

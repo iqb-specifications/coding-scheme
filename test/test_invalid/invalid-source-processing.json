@@ -1,0 +1,14 @@
+{
+    "version": "1.0",
+    "variableCodings": [
+        {
+            "id": "V1",
+            "sourceType": "SOLVER",
+            "sourceParameters": {
+                "solverExpression": "${x}",
+                "processing": ["INVALID_SOURCE_PROC"]
+            },
+            "deriveSources": ["x"]
+        }
+    ]
+}

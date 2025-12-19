@@ -1,0 +1,35 @@
+{
+    "version": "1.0",
+    "variableCodings": [
+        {
+            "id": "special_ids",
+            "sourceType": "BASE",
+            "codes": [
+                {
+                    "id": "INVALID",
+                    "score": 0
+                },
+                {
+                    "id": "INTENDED_INCOMPLETE",
+                    "score": 0
+                },
+                {
+                    "id": 1,
+                    "score": 1
+                },
+                {
+                    "id": 0,
+                    "score": 0
+                },
+                {
+                    "id": -5,
+                    "score": -5
+                },
+                {
+                    "id": 999999,
+                    "score": 100
+                }
+            ]
+        }
+    ]
+}

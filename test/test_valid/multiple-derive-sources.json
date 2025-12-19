@@ -1,0 +1,22 @@
+{
+    "version": "2.0",
+    "variableCodings": [
+        {
+            "id": "v1",
+            "sourceType": "BASE"
+        },
+        {
+            "id": "v2",
+            "sourceType": "BASE"
+        },
+        {
+            "id": "v3",
+            "sourceType": "BASE"
+        },
+        {
+            "id": "derived",
+            "sourceType": "CONCAT_CODE",
+            "deriveSources": ["v1", "v2", "v3"]
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "version": "4.0",
+    "variableCodings": [
+        {
+            "id": "code_types",
+            "sourceType": "BASE",
+            "codes": [
+                {
+                    "id": 1,
+                    "type": "UNSET"
+                },
+                {
+                    "id": 2,
+                    "type": "FULL_CREDIT"
+                },
+                {
+                    "id": 3,
+                    "type": "PARTIAL_CREDIT"
+                },
+                {
+                    "id": 4,
+                    "type": "NO_CREDIT"
+                },
+                {
+                    "id": 5,
+                    "type": "TO_CHECK"
+                },
+                {
+                    "id": 6,
+                    "type": "RESIDUAL"
+                },
+                {
+                    "id": 7,
+                    "type": "RESIDUAL_AUTO"
+                },
+                {
+                    "id": 8,
+                    "type": "INTENDED_INCOMPLETE"
+                }
+            ]
+        }
+    ]
+}

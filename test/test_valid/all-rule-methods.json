@@ -1,0 +1,176 @@
+{
+    "version": "1.0",
+    "variableCodings": [
+        {
+            "id": "all_rules",
+            "sourceType": "BASE",
+            "codes": [
+                {
+                    "id": 1,
+                    "ruleSets": [
+                        {
+                            "rules": [
+                                {
+                                    "method": "MATCH",
+                                    "parameters": ["test"]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "ruleSets": [
+                        {
+                            "rules": [
+                                {
+                                    "method": "MATCH_REGEX",
+                                    "parameters": ["^[a-z]+$"]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "ruleSets": [
+                        {
+                            "rules": [
+                                {
+                                    "method": "NUMERIC_MATCH",
+                                    "parameters": ["42"]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "ruleSets": [
+                        {
+                            "rules": [
+                                {
+                                    "method": "NUMERIC_RANGE",
+                                    "parameters": ["10", "20"]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "ruleSets": [
+                        {
+                            "rules": [
+                                {
+                                    "method": "NUMERIC_FULL_RANGE",
+                                    "parameters": ["0", "100"]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "ruleSets": [
+                        {
+                            "rules": [
+                                {
+                                    "method": "NUMERIC_LESS_THAN",
+                                    "parameters": ["50"]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "ruleSets": [
+                        {
+                            "rules": [
+                                {
+                                    "method": "NUMERIC_MORE_THAN",
+                                    "parameters": ["100"]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "ruleSets": [
+                        {
+                            "rules": [
+                                {
+                                    "method": "NUMERIC_MAX",
+                                    "parameters": ["999"]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 9,
+                    "ruleSets": [
+                        {
+                            "rules": [
+                                {
+                                    "method": "NUMERIC_MIN",
+                                    "parameters": ["1"]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 10,
+                    "ruleSets": [
+                        {
+                            "rules": [
+                                {
+                                    "method": "IS_EMPTY"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 11,
+                    "ruleSets": [
+                        {
+                            "rules": [
+                                {
+                                    "method": "IS_NULL"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 12,
+                    "ruleSets": [
+                        {
+                            "rules": [
+                                {
+                                    "method": "IS_TRUE"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 13,
+                    "ruleSets": [
+                        {
+                            "rules": [
+                                {
+                                    "method": "IS_FALSE"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

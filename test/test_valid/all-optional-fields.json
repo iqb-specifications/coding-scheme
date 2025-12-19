@@ -1,0 +1,40 @@
+{
+    "version": "5.12",
+    "variableCodings": [
+        {
+            "id": "full_optional",
+            "alias": "alias_123",
+            "label": "Full Optional Variable",
+            "sourceType": "BASE",
+            "deriveSources": [],
+            "processing": ["IGNORE_CASE"],
+            "fragmenting": "[,;]",
+            "manualInstruction": "Manual coding instructions here",
+            "codeModel": "MANUAL_AND_RULES",
+            "page": "page1",
+            "codes": [
+                {
+                    "id": 1,
+                    "type": "FULL_CREDIT",
+                    "label": "Correct Answer",
+                    "score": 10,
+                    "manualInstruction": "Code as 1 if correct",
+                    "ruleSetOperatorAnd": true,
+                    "ruleSets": [
+                        {
+                            "valueArrayPos": 0,
+                            "ruleOperatorAnd": true,
+                            "rules": [
+                                {
+                                    "method": "MATCH",
+                                    "parameters": ["answer"],
+                                    "fragment": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

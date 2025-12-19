@@ -1,0 +1,32 @@
+{
+    "version": "1.0",
+    "variableCodings": [
+        {
+            "id": "no_params",
+            "sourceType": "BASE",
+            "codes": [
+                {
+                    "id": 1,
+                    "ruleSets": [
+                        {
+                            "rules": [
+                                {
+                                    "method": "IS_EMPTY"
+                                },
+                                {
+                                    "method": "IS_NULL"
+                                },
+                                {
+                                    "method": "IS_TRUE"
+                                },
+                                {
+                                    "method": "IS_FALSE"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

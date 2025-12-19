@@ -1,0 +1,30 @@
+{
+    "version": "1.0",
+    "variableCodings": [
+        {
+            "id": "abc123",
+            "sourceType": "BASE"
+        },
+        {
+            "id": "ABC",
+            "sourceType": "BASE"
+        },
+        {
+            "id": "123",
+            "sourceType": "BASE"
+        },
+        {
+            "id": "test_var_123",
+            "alias": "alias_ABC_999",
+            "sourceType": "BASE"
+        },
+        {
+            "id": "_underscore",
+            "sourceType": "BASE"
+        },
+        {
+            "id": "a",
+            "sourceType": "BASE"
+        }
+    ]
+}

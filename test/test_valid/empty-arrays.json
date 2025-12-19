@@ -1,0 +1,12 @@
+{
+    "version": "1.0",
+    "variableCodings": [
+        {
+            "id": "empty_arrays",
+            "sourceType": "BASE",
+            "deriveSources": [],
+            "processing": [],
+            "codes": []
+        }
+    ]
+}

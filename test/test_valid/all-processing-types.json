@@ -1,0 +1,18 @@
+{
+    "version": "2.5",
+    "variableCodings": [
+        {
+            "id": "proc1",
+            "sourceType": "BASE",
+            "processing": [
+                "IGNORE_CASE",
+                "IGNORE_ALL_SPACES",
+                "IGNORE_DISPENSABLE_SPACES",
+                "SORT_ARRAY",
+                "REPLAY_REQUIRED",
+                "ATTACHMENT",
+                "CODER_TRAINING_REQUIRED"
+            ]
+        }
+    ]
+}

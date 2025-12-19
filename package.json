@@ -1,12 +1,13 @@
 {
     "name": "@iqbspecs/coding-scheme",
+    "version": "3.3.1",
     "author": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
     "license": "MIT",
     "description": "Data interface for coding assessment output",
     "scripts": {
         "test_schema": "jest test ./coding-scheme.schema.json ./test",
         "validate-schema": "test-schema test/test_valid",
-        "generate_docs": "asyncapi generate fromTemplate ./make_doc/asyncapi.yaml @asyncapi/html-template --param config=make_doc/asyncapi.config.json -o ./public --force-write --use-new-generator && cat make_doc/add.css >> ./public/css/global.min.css",
+        "generate_docs": "asyncapi generate fromTemplate ./make_doc/asyncapi.yaml @asyncapi/html-template --param config=make_doc/asyncapi.config.json -o ./public --force-write --use-new-generator && cat make_doc/add.css >> ./public/css/global.min.css && cp ./make_doc/coding-scheme.schema.json ./coding-scheme.schema.json",
         "prepare_publish": "rm -rf dist/* && tsc --module commonjs --skipLibCheck && cp ./package_npm.json ./dist/package.json && cp ./coding-scheme.schema.json ./dist && cp ./README.md ./dist",
         "npm_publish": "cd dist && npm publish --access public",
         "lint": "eslint .",

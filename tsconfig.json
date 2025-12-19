@@ -14,5 +14,5 @@
         "rootDir": "."
     },
     "include": ["coding-scheme.interface.ts", "coding-scheme.ts", "index.ts"],
-    "exclude": ["test.ts", "dist", "public"]
+    "exclude": ["test.ts", "dist", "public", "node_modules"]
 }

@@ -1,17 +1,43 @@
-export const validStatesForDerivingValue = ['VALUE_CHANGED', 'NO_CODING', 'CODING_INCOMPLETE',
-  'CODING_ERROR', 'CODING_COMPLETE'];
+export const validStatesForDerivingValue = [
+  'VALUE_CHANGED',
+  'NO_CODING',
+  'CODING_INCOMPLETE',
+  'CODING_ERROR',
+  'CODING_COMPLETE'
+];
 export const validStatesForDerivingCode = ['CODING_COMPLETE'];
-export const validStatesToStartDeriving = ['UNSET', 'CODING_ERROR', 'CODING_INCOMPLETE'];
-export const statesToReplaceByDeriveError = ['NO_CODING', 'CODING_INCOMPLETE', 'CODING_ERROR'];
+export const validStatesToStartDeriving = [
+  'UNSET',
+  'CODING_ERROR',
+  'CODING_INCOMPLETE'
+];
+export const statesToReplaceByDeriveError = [
+  'NO_CODING',
+  'CODING_INCOMPLETE',
+  'CODING_ERROR'
+];
 export const deriveMethodsFromValue = ['SOLVER', 'COPY_VALUE', 'UNIQUE_VALUES'];
 
 export type ResponseValueSingleType = null | string | number | boolean;
-export type ResponseValueType = ResponseValueSingleType | ResponseValueSingleType[];
+export type ResponseValueType =
+    | ResponseValueSingleType
+    | ResponseValueSingleType[];
 export type TransformedResponseValueType = ResponseValueType | string[][];
 
-export type RuleMethod = 'MATCH' | 'MATCH_REGEX' | 'NUMERIC_MATCH' | 'NUMERIC_RANGE' | 'NUMERIC_FULL_RANGE'
-| 'NUMERIC_LESS_THAN' | 'NUMERIC_MORE_THAN' | 'NUMERIC_MAX' | 'NUMERIC_MIN' | 'IS_EMPTY' | 'IS_NULL'
-| 'IS_TRUE' | 'IS_FALSE';
+export type RuleMethod =
+    | 'MATCH'
+    | 'MATCH_REGEX'
+    | 'NUMERIC_MATCH'
+    | 'NUMERIC_RANGE'
+    | 'NUMERIC_FULL_RANGE'
+    | 'NUMERIC_LESS_THAN'
+    | 'NUMERIC_MORE_THAN'
+    | 'NUMERIC_MAX'
+    | 'NUMERIC_MIN'
+    | 'IS_EMPTY'
+    | 'IS_NULL'
+    | 'IS_TRUE'
+    | 'IS_FALSE';
 export const RuleMethodParameterCount = {
   MATCH: -1,
   MATCH_REGEX: -1,
@@ -27,65 +53,106 @@ export const RuleMethodParameterCount = {
   IS_TRUE: 0,
   IS_FALSE: 0
 };
-export const numericRules = ['NUMERIC_MATCH', 'NUMERIC_LESS_THAN', 'NUMERIC_MAX', 'NUMERIC_MORE_THAN',
-  'NUMERIC_MIN', 'NUMERIC_RANGE'];
+export const numericRules = [
+  'NUMERIC_MATCH',
+  'NUMERIC_LESS_THAN',
+  'NUMERIC_MAX',
+  'NUMERIC_MORE_THAN',
+  'NUMERIC_MIN',
+  'NUMERIC_RANGE'
+];
 export const booleanRules = ['IS_TRUE', 'IS_FALSE'];
-export type ProcessingParameterType = 'IGNORE_CASE' | 'IGNORE_ALL_SPACES' | 'IGNORE_DISPENSABLE_SPACES' | 'SORT_ARRAY' |
-'REPLAY_REQUIRED' | 'ATTACHMENT' | 'CODER_TRAINING_REQUIRED';
+export type ProcessingParameterType =
+    | 'IGNORE_CASE'
+    | 'IGNORE_ALL_SPACES'
+    | 'IGNORE_DISPENSABLE_SPACES'
+    | 'SORT_ARRAY'
+    | 'REPLAY_REQUIRED'
+    | 'ATTACHMENT'
+    | 'CODER_TRAINING_REQUIRED';
 export type CodeModelType = 'NONE' | 'RULES_ONLY' | 'MANUAL_ONLY';
-export type CodeType = 'UNSET' | 'FULL_CREDIT' | 'PARTIAL_CREDIT' |
-'NO_CREDIT' | 'TO_CHECK' | 'RESIDUAL' | 'RESIDUAL_AUTO' | 'INTENDED_INCOMPLETE';
-export type SourceType = 'BASE' | 'BASE_NO_VALUE' | 'MANUAL' | 'COPY_VALUE' | 'CONCAT_CODE' | 'SUM_CODE' |
-'SUM_SCORE' | 'UNIQUE_VALUES' | 'SOLVER';
-export type SourceProcessingType = 'TO_LOWER_CASE' | 'TO_NUMBER' | 'REMOVE_ALL_SPACES' | 'REMOVE_DISPENSABLE_SPACES' |
-'TAKE_DISPLAYED_AS_VALUE_CHANGED' | 'TAKE_EMPTY_AS_VALID' | 'SORT' | 'NO_CODING' | 'TAKE_NOT_REACHED_AS_VALUE_CHANGED';
+export type CodeType =
+    | 'UNSET'
+    | 'FULL_CREDIT'
+    | 'PARTIAL_CREDIT'
+    | 'NO_CREDIT'
+    | 'TO_CHECK'
+    | 'RESIDUAL'
+    | 'RESIDUAL_AUTO'
+    | 'INTENDED_INCOMPLETE';
+export type SourceType =
+    | 'BASE'
+    | 'BASE_NO_VALUE'
+    | 'MANUAL'
+    | 'COPY_VALUE'
+    | 'CONCAT_CODE'
+    | 'SUM_CODE'
+    | 'SUM_SCORE'
+    | 'UNIQUE_VALUES'
+    | 'SOLVER';
+export type SourceProcessingType =
+    | 'TO_LOWER_CASE'
+    | 'TO_NUMBER'
+    | 'REMOVE_ALL_SPACES'
+    | 'REMOVE_DISPENSABLE_SPACES'
+    | 'TAKE_DISPLAYED_AS_VALUE_CHANGED'
+    | 'TAKE_EMPTY_AS_VALID'
+    | 'SORT'
+    | 'NO_CODING'
+    | 'TAKE_NOT_REACHED_AS_VALUE_CHANGED';
 export const DeriveConcatDelimiter = '_';
-export type CodingSchemeProblemType = 'VACANT' | 'SOURCE_MISSING' | 'INVALID_SOURCE' | 'RULE_PARAMETER_COUNT_MISMATCH'
-| 'MORE_THAN_ONE_SOURCE' | 'ONLY_ONE_SOURCE' | 'VALUE_COPY_NOT_FROM_BASE';
+export type CodingSchemeProblemType =
+    | 'VACANT'
+    | 'SOURCE_MISSING'
+    | 'INVALID_SOURCE'
+    | 'RULE_PARAMETER_COUNT_MISMATCH'
+    | 'MORE_THAN_ONE_SOURCE'
+    | 'ONLY_ONE_SOURCE'
+    | 'VALUE_COPY_NOT_FROM_BASE';
 
 export interface CodingRule {
-  method: RuleMethod,
-  parameters?: string[],
-  fragment?: number
+  method: RuleMethod;
+  parameters?: string[];
+  fragment?: number;
 }
 
 export interface RuleSet {
-  ruleOperatorAnd: boolean,
-  rules: CodingRule[],
-  valueArrayPos?: number | 'ANY' | 'ANY_OPEN' | 'SUM' | 'LENGTH',
+  ruleOperatorAnd: boolean;
+  rules: CodingRule[];
+  valueArrayPos?: number | 'ANY' | 'ANY_OPEN' | 'SUM' | 'LENGTH';
 }
 
 export interface CodeData {
-  id: number | 'INVALID' | 'INTENDED_INCOMPLETE',
-  type: CodeType,
-  label: string,
-  score: number,
-  ruleSetOperatorAnd: boolean,
-  ruleSets: RuleSet[],
-  manualInstruction: string
+  id: number | 'INVALID' | 'INTENDED_INCOMPLETE';
+  type: CodeType;
+  label: string;
+  score: number;
+  ruleSetOperatorAnd: boolean;
+  ruleSets: RuleSet[];
+  manualInstruction: string;
 }
 
 export const CodingSchemeVersionMajor = 3;
-export const CodingSchemeVersionMinor = 0;
+export const CodingSchemeVersionMinor = 3;
 
 export interface VariableSourceParameters {
-  solverExpression?: string,
-  processing?: SourceProcessingType[]
+  solverExpression?: string;
+  processing?: SourceProcessingType[];
 }
 
 export interface VariableCodingData {
-  id: string,
-  alias: string,
-  label: string,
-  sourceType: SourceType,
-  sourceParameters: VariableSourceParameters,
-  deriveSources: string[],
-  processing: ProcessingParameterType[],
-  fragmenting?: string,
-  manualInstruction: string,
-  codeModel?: CodeModelType,
-  page?: string,
-  codes: CodeData[]
+  id: string;
+  alias: string;
+  label: string;
+  sourceType: SourceType;
+  sourceParameters: VariableSourceParameters;
+  deriveSources: string[];
+  processing: ProcessingParameterType[];
+  fragmenting?: string;
+  manualInstruction: string;
+  codeModel?: CodeModelType;
+  page?: string;
+  codes: CodeData[];
 }
 
 // todo: not interface but class, so better extract in separate file
@@ -95,13 +162,20 @@ export class CodingScheme {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   constructor(givenScheme: any) {
     const transformedScheme =
-      typeof givenScheme === 'string' ? JSON.parse(givenScheme) : givenScheme;
+            typeof givenScheme === 'string' ?
+              JSON.parse(givenScheme) :
+              givenScheme;
     let codingSchemeMajorVersion = 0;
     // let codingSchemeMinorVersion = 0;
     if (!Array.isArray(transformedScheme) && transformedScheme.version) {
-      const versionMatches = /^(\d+).(\d+)$/.exec(transformedScheme.version);
+      const versionMatches = /^(\d+).(\d+)$/.exec(
+        transformedScheme.version
+      );
       if (versionMatches && versionMatches.length > 2) {
-        codingSchemeMajorVersion = Number.parseInt(versionMatches[1], 10);
+        codingSchemeMajorVersion = Number.parseInt(
+          versionMatches[1],
+          10
+        );
         // codingSchemeMinorVersion = Number.parseInt(versionMatches[2], 10);
       }
     }
@@ -113,9 +187,12 @@ export class CodingScheme {
       this.variableCodings.map(vc => vc.codes.map(code => {
         if (code.id === null) code.id = 'INVALID';
         return code;
-      }));
+      })
+      );
       if (codingSchemeMajorVersion < 3) {
-        this.variableCodings.push(CodingScheme.getCodeVersionLessThan3(c));
+        this.variableCodings.push(
+          CodingScheme.getCodeVersionLessThan3(c)
+        );
       } else {
         this.variableCodings.push(c);
       }
@@ -123,13 +200,18 @@ export class CodingScheme {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  private static getCodeVersionLessThan3(givenCoding: any): VariableCodingData {
+  private static getCodeVersionLessThan3(
+    givenCoding: any
+  ): VariableCodingData {
     let valueProcessing: string[] =
-      givenCoding.processing ||
-      givenCoding.preProcessing ||
-      givenCoding.valueTransformations ||
-      [];
-    if (valueProcessing && valueProcessing.includes('REMOVE_WHITE_SPACES')) {
+            givenCoding.processing ||
+            givenCoding.preProcessing ||
+            givenCoding.valueTransformations ||
+            [];
+    if (
+      valueProcessing &&
+            valueProcessing.includes('REMOVE_WHITE_SPACES')
+    ) {
       valueProcessing = valueProcessing.filter(
         vp => vp !== 'REMOVE_WHITE_SPACES'
       );
@@ -179,14 +261,16 @@ export class CodingScheme {
     }
     if (givenCoding.codeModel !== 'NONE') {
       newCoding.codeModel =
-        givenCoding.codeModel === 'MANUAL' ? 'MANUAL_ONLY' : 'NONE';
+                givenCoding.codeModel === 'MANUAL' ? 'MANUAL_ONLY' : 'NONE';
     }
     if (givenCoding.codes && Array.isArray(givenCoding.codes)) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       givenCoding.codes.forEach((code: any) => {
         if (code.ruleSets) {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const elseRule = code.ruleSets.find((rs: any) => !!rs.rules.find((r: any) => r.method === 'ELSE'));
+          const elseRule = code.ruleSets.find(
+            (rs: any) => !!rs.rules.find((r: any) => r.method === 'ELSE')
+          );
           if (elseRule) {
             newCoding.codes.push(<CodeData>{
               id: code.id,
@@ -209,10 +293,10 @@ export class CodingScheme {
             score: code.score || 0,
             ruleSetOperatorAnd: false,
             ruleSets: [
-              <RuleSet>{
-                ruleOperatorAnd: code.ruleOperatorAnd || false,
-                rules: code.rules
-              }
+                            <RuleSet>{
+                              ruleOperatorAnd: code.ruleOperatorAnd || false,
+                              rules: code.rules
+                            }
             ],
             manualInstruction: code.manualInstruction || ''
           });
@@ -222,16 +306,28 @@ export class CodingScheme {
     return newCoding;
   }
 
-  static checkVersion(givenScheme: any): 'OK' | 'MAJOR_LESS' | 'MAJOR_GREATER' | 'MINOR_GREATER' {
+  static checkVersion(
+    givenScheme: any
+  ): 'OK' | 'MAJOR_LESS' | 'MAJOR_GREATER' | 'MINOR_GREATER' {
     const transformedScheme =
-      typeof givenScheme === 'string' ? JSON.parse(givenScheme) : givenScheme;
+            typeof givenScheme === 'string' ?
+              JSON.parse(givenScheme) :
+              givenScheme;
     let localCodingSchemeVersionMajor = 0;
     let localCodingSchemeVersionMinor = 0;
     if (!Array.isArray(transformedScheme) && transformedScheme.version) {
-      const versionMatches = /^(\d+).(\d+)$/.exec(transformedScheme.version);
+      const versionMatches = /^(\d+).(\d+)$/.exec(
+        transformedScheme.version
+      );
       if (versionMatches && versionMatches.length > 2) {
-        localCodingSchemeVersionMajor = Number.parseInt(versionMatches[1], 10);
-        localCodingSchemeVersionMinor = Number.parseInt(versionMatches[2], 10);
+        localCodingSchemeVersionMajor = Number.parseInt(
+          versionMatches[1],
+          10
+        );
+        localCodingSchemeVersionMinor = Number.parseInt(
+          versionMatches[2],
+          10
+        );
       }
     }
     if (CodingSchemeVersionMajor < localCodingSchemeVersionMajor) return 'MAJOR_GREATER';

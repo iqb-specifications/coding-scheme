@@ -1,0 +1,12 @@
+#operations {
+	display: none;
+}
+
+.sidebar--content > ul > li:nth-child(2) {
+	display: none;
+}
+
+.panel--right.absolute.top-0.right-0.h-full.bg-gray-800 {
+	display: none;
+	background-color: white;
+}

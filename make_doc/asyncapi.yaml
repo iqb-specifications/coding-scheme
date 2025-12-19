@@ -1,44 +1,21 @@
-asyncapi: 3.0.0
-id: urn:uuid:coding-scheme-doc
-defaultContentType: application/json
+asyncapi: 2.5.0
 info:
-    title: coding-scheme
-    description: Rules and instructions for coding assessment output.
-    license:
-        name: CC0 1.0
-        url: https://creativecommons.org/publicdomain/zero/1.0/
-    version: " - click on schema id to expand"
-    contact:
-        name: Home of iqb-specifications (German only)
-        url: https://iqb-specifications.github.io/
-        email: contact@iqb-specifications.github.io
-servers:
-    production:
-        host: iqb-specifications.github.io
-        description: Documentation server
-        protocol: https
-        pathname: /
+  title: coding-scheme
+  description: Rules and instructions for coding assessment output.
+  license:
+    name: CC0 1.0
+    url: https://creativecommons.org/publicdomain/zero/1.0/
+  version: " - click on schema id to expand"
+  contact:
+    name: Home of iqb-specifications (German only)
+    url: https://iqb-specifications.github.io/
 channels:
-    iqb_data_structures:
-        address: iqb_data_structures
-        messages:
-            select_schema:
-                $ref: "#/components/messages/select_schema"
-operations:
-    receiveSchema:
-        action: receive
-        channel:
-            $ref: "#/channels/iqb_data_structures"
-        messages:
-            - $ref: "#/channels/iqb_data_structures/messages/select_schema"
+  iqb_data_structures:
+    subscribe:
+      operationId: 'Please select one schema'
+      message:
+        messageId: select_schema
 components:
-    messages:
-        select_schema:
-            description: Please select one schema
-            contentType: application/json
-            payload:
-                schema:
-                    $ref: "./coding-scheme.schema.json"
-    schemas:
-        response:
-            $ref: "./coding-scheme.schema.json"
+  schemas:
+    response:
+      $ref: '../coding-scheme.schema.json'

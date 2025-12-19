@@ -210,10 +210,10 @@ export class CodingScheme {
             [];
     if (
       valueProcessing &&
-            valueProcessing.includes('IGNORE_ALL_SPACES')
+            valueProcessing.includes('REMOVE_WHITE_SPACES')
     ) {
       valueProcessing = valueProcessing.filter(
-        vp => vp !== 'IGNORE_ALL_SPACES'
+        vp => vp !== 'REMOVE_WHITE_SPACES'
       );
       valueProcessing.push('IGNORE_ALL_SPACES');
     }
@@ -234,7 +234,7 @@ export class CodingScheme {
       processing: valueProcessing as ProcessingParameterType[],
       fragmenting: givenCoding.fragmenting || '',
       manualInstruction: givenCoding.manualInstruction || '',
-      codeModel: givenCoding.codeModel || 'NONE',
+      codeModel: givenCoding.codeModel || 'MANUAL_AND_RULES',
       page: givenCoding.page || '0',
       codes: []
     };
@@ -259,9 +259,11 @@ export class CodingScheme {
     } else {
       newCoding.sourceType = givenCoding.sourceType;
     }
-    if (givenCoding.codeModel !== 'NONE') {
+    if (givenCoding.codeModel && givenCoding.codeModel !== 'NONE') {
       newCoding.codeModel =
-                givenCoding.codeModel === 'MANUAL' ? 'MANUAL_ONLY' : 'MANUAL_AND_RULES';
+                givenCoding.codeModel === 'MANUAL' ?
+                  'MANUAL_ONLY' :
+                  'MANUAL_AND_RULES';
     }
     if (givenCoding.codes && Array.isArray(givenCoding.codes)) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -339,7 +341,7 @@ export class CodingScheme {
   toString(): string {
     return JSON.stringify({
       version: `${CodingSchemeVersionMajor}.${CodingSchemeVersionMinor}`,
-      variables: this.variableCodings
+      variableCodings: this.variableCodings
     });
   }
 }

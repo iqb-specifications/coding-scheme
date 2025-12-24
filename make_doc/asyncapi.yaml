@@ -14,10 +14,11 @@ info:
 
 channels:
     iqb_data_structures:
-        subscribe:
-            operationId: "Please select one schema"
-            message:
-                messageId: select_schema
+        address: iqb_data_structures
+        messages:
+            select_schema:
+                payload:
+                    $ref: "#/components/schemas/response"
 
 components:
     schemas:

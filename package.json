@@ -7,7 +7,7 @@
     "scripts": {
         "test_schema": "jest test ./coding-scheme.schema.json ./test",
         "validate-schema": "test-schema test/test_valid",
-        "generate_docs": "asyncapi generate fromTemplate ./make_doc/asyncapi.yaml @asyncapi/html-template --use-new-generator --param config=make_doc/asyncapi.config.json -o ./public --force-write && cat make_doc/add.css >> ./public/css/global.min.css && cp ./make_doc/coding-scheme.schema.json ./coding-scheme.schema.json",
+        "generate_docs": "asyncapi generate fromTemplate ./make_doc/asyncapi.yaml @asyncapi/html-template@3.0.0 --use-new-generator --param config=make_doc/asyncapi.config.json -o ./public --force-write && cat make_doc/add.css >> ./public/css/global.min.css && cp ./make_doc/coding-scheme.schema.json ./coding-scheme.schema.json",
         "prepare_publish": "rm -rf dist/* && tsc --module commonjs --skipLibCheck && cp ./package_npm.json ./dist/package.json && cp ./coding-scheme.schema.json ./dist && cp ./README.md ./dist",
         "npm_publish": "cd dist && npm publish --access public",
         "lint": "eslint .",
@@ -38,7 +38,7 @@
         ]
     },
     "devDependencies": {
-        "@asyncapi/cli": "^2.11.0",
+        "@asyncapi/cli": "^4.1.1",
         "@asyncapi/html-template": "^3.1.0",
         "@babel/preset-typescript": "^7.24.1",
         "@iqb/eslint-config": "^2.2.0",

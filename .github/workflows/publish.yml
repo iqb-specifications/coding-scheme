@@ -27,7 +27,7 @@ jobs:
                   git config --global user.email "mechtel@iqb.hu-berlin.de"
                   git config --global user.name "Martin Mechtel"
                   git checkout gh-pages
-                  git reset --hard main
+                  git reset --hard origin/main
             - name: Run html generation
               run: |
                   npm ci

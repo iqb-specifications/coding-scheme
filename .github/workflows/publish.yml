@@ -10,7 +10,21 @@ on:
 name: Generate Html und Publish
 
 jobs:
+    validate:
+        if: github.event_name == 'pull_request'
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+            - name: Run html generation
+              run: |
+                  npm ci
+                  npm run generate_docs
+
     deploy-build:
+        if: github.event_name != 'pull_request'
         runs-on: ubuntu-latest
         permissions:
             contents: write
@@ -27,7 +41,7 @@ jobs:
                   git config --global user.email "mechtel@iqb.hu-berlin.de"
                   git config --global user.name "Martin Mechtel"
                   git checkout gh-pages
-                  git reset --hard main
+                  git reset --hard origin/main
             - name: Run html generation
               run: |
                   npm ci

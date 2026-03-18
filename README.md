@@ -56,7 +56,7 @@ const status = CodingScheme.checkVersion({
 The current library version constants are:
 
 -   **`CodingSchemeVersionMajor`**: `3`
--   **`CodingSchemeVersionMinor`**: `3`
+-   **`CodingSchemeVersionMinor`**: `4`
 
 ### Types
 

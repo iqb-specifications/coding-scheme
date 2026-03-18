@@ -81,24 +81,26 @@ export class CodingScheme {
     const givenCodings = Array.isArray(transformedScheme) ?
       transformedScheme :
       transformedScheme.variableCodings || [];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     givenCodings.forEach((c: any) => {
-      this.variableCodings.forEach(vc => {
-        vc.codes?.forEach(code => {
-          if (code.id === null) code.id = 'INVALID';
-        });
-      });
+      let vc: VariableCodingData;
       if (codingSchemeMajorVersion < 3) {
-        this.variableCodings.push(
-          CodingScheme.getCodeVersionLessThan3(c)
-        );
+        vc = CodingScheme.getCodeVersionLessThan3(c);
       } else {
-        this.variableCodings.push(c);
+        vc = c;
       }
+      CodingScheme.applyLegacyFixes(vc);
+      this.variableCodings.push(vc);
+    });
+    this.variableCodings.forEach(vc => {
+      vc.codes?.forEach(code => {
+        if (code.id === null) code.id = 'INVALID';
+      });
     });
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private static getCodeVersionLessThan3(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     givenCoding: any
   ): VariableCodingData {
     const codes: CodeData[] = [];
@@ -166,8 +168,8 @@ export class CodingScheme {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       givenCoding.codes.forEach((code: any) => {
         if (code.ruleSets) {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const elseRule = code.ruleSets.find(
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (rs: any) => !!rs.rules.find((r: any) => r.method === 'ELSE')
           );
           if (elseRule) {
@@ -205,7 +207,33 @@ export class CodingScheme {
     return newCoding;
   }
 
+  private static applyLegacyFixes(vc: VariableCodingData): void {
+    if ((vc.codeModel as unknown as string) === 'NONE') {
+      const hasRules = vc.codes?.some(c => (c.ruleSets && c.ruleSets.length > 0));
+      const hasManualInstruction = !!vc.manualInstruction || vc.codes?.some(c => !!c.manualInstruction);
+      if (vc.sourceType === 'MANUAL') {
+        vc.codeModel = 'MANUAL_ONLY';
+      } else if (hasRules && hasManualInstruction) {
+        vc.codeModel = 'MANUAL_AND_RULES';
+      } else if (hasRules) {
+        vc.codeModel = 'RULES_ONLY';
+      } else if (hasManualInstruction) {
+        vc.codeModel = 'MANUAL_ONLY';
+      } else {
+        vc.codeModel = 'RULES_ONLY';
+      }
+    }
+    vc.codes?.forEach(c => {
+      if (c.ruleSets && Array.isArray(c.ruleSets)) {
+        c.ruleSets.forEach(rs => {
+          if ((rs.valueArrayPos as unknown as number) === -1) rs.valueArrayPos = 'ANY';
+        });
+      }
+    });
+  }
+
   static checkVersion(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     givenScheme: any
   ): 'OK' | 'MAJOR_LESS' | 'MAJOR_GREATER' | 'MINOR_GREATER' {
     const transformedScheme =

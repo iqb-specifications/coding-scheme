@@ -25,6 +25,15 @@
         {
             "id": "a",
             "sourceType": "BASE"
+        },
+        {
+            "id": "var-with-hyphen",
+            "sourceType": "BASE"
+        },
+        {
+            "id": "v-123-abc",
+            "alias": "alias-with-hyphen-123",
+            "sourceType": "BASE"
         }
     ]
 }

@@ -81,6 +81,7 @@ export class CodingScheme {
     const givenCodings = Array.isArray(transformedScheme) ?
       transformedScheme :
       transformedScheme.variableCodings || [];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     givenCodings.forEach((c: any) => {
       let vc: VariableCodingData;
       if (codingSchemeMajorVersion < 3) {
@@ -98,8 +99,8 @@ export class CodingScheme {
     });
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private static getCodeVersionLessThan3(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     givenCoding: any
   ): VariableCodingData {
     const codes: CodeData[] = [];
@@ -167,8 +168,8 @@ export class CodingScheme {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       givenCoding.codes.forEach((code: any) => {
         if (code.ruleSets) {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const elseRule = code.ruleSets.find(
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (rs: any) => !!rs.rules.find((r: any) => r.method === 'ELSE')
           );
           if (elseRule) {
@@ -232,6 +233,7 @@ export class CodingScheme {
   }
 
   static checkVersion(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     givenScheme: any
   ): 'OK' | 'MAJOR_LESS' | 'MAJOR_GREATER' | 'MINOR_GREATER' {
     const transformedScheme =

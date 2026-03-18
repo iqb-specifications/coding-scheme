@@ -2,6 +2,15 @@
 
 For newer changes see [Releases](https://github.com/iqb-specifications/coding-scheme/releases)
 
+# 3.4
+
+    Erweiterung CodingSchemeProblemType
+
+-   `RULE_REGEX_INVALID`
+-   `RULE_PARAMETER_INVALID`
+-   `RULE_NUMERIC_RANGE_INVALID`
+-   `RULESET_VALUE_ARRAY_POS_INVALID`
+
 # 3.3
 
 -   `CODER_TRAINING_REQUIRED` neuer Parameter für processing

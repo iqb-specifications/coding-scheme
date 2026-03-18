@@ -35,7 +35,7 @@ import {
 `CodingScheme` accepts either a JSON string or a parsed object.
 
 ```ts
-const raw = '{"version":"3.3","variableCodings":[]}';
+const raw = '{"version":"3.4","variableCodings":[]}';
 const scheme = new CodingScheme(raw);
 
 // normalized, versioned JSON string
@@ -46,7 +46,7 @@ const normalized = scheme.toString();
 
 ```ts
 const status = CodingScheme.checkVersion({
-    version: "3.3",
+    version: "3.4",
     variableCodings: [],
 } satisfies CodingSchemeData);
 

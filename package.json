@@ -1,6 +1,6 @@
 {
     "name": "@iqbspecs/coding-scheme",
-    "version": "3.4.0",
+    "version": "3.4.1",
     "author": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
     "license": "MIT",
     "description": "Data interface for coding assessment output",

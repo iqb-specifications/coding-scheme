@@ -1,0 +1,14 @@
+{
+  "version": "3.5",
+  "variableCodings": [
+    {
+      "id": "partial",
+      "sourceType": "CONCAT_CODE",
+      "deriveSources": ["a", "b"],
+      "sourceParameters": {
+        "processing": ["TAKE_DISPLAYED_AS_ZERO_IF_PARTIAL", "TAKE_EMPTY_AS_ZERO_IF_PARTIAL", "SORT"]
+      },
+      "codes": [{"id": 1, "ruleSets": [{"rules": [{"method": "MATCH", "parameters": ["0_x"]}]}]}]
+    }
+  ]
+}

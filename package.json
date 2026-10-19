@@ -1,6 +1,6 @@
 {
     "name": "@iqbspecs/coding-scheme",
-    "version": "3.4.1",
+    "version": "3.5.0",
     "author": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
     "license": "MIT",
     "description": "Data interface for coding assessment output",
@@ -27,7 +27,10 @@
                 "files": [
                     "*.ts"
                 ],
-                "extends": "@iqb/eslint-config"
+                "extends": "@iqb/eslint-config",
+                "parserOptions": {
+                    "project": ["./tsconfig.eslint.json"]
+                }
             },
             {
                 "files": [

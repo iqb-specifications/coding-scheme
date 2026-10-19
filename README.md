@@ -56,7 +56,32 @@ const status = CodingScheme.checkVersion({
 The current library version constants are:
 
 -   **`CodingSchemeVersionMajor`**: `3`
--   **`CodingSchemeVersionMinor`**: `4`
+-   **`CodingSchemeVersionMinor`**: `5`
+
+### Partial credit with empty source responses (3.5)
+
+For `SUM_SCORE`, `SUM_CODE` and `CONCAT_CODE`, the derived variable can opt in
+through `sourceParameters.processing`:
+
+- `TAKE_DISPLAYED_AS_ZERO_IF_PARTIAL`: replace contributions from `DISPLAYED`
+  sources, including displayed checkbox defaults such as `false`.
+- `TAKE_EMPTY_AS_ZERO_IF_PARTIAL`: replace contributions from `INVALID` sources
+  whose value is exactly `null`, `""` or `[]`. Neither `false` nor `0` is empty.
+
+Both options are disabled by default. Replacement requires at least one source
+with status `CODING_COMPLETE`. Pending codings are never replaced and yield
+`DERIVE_PENDING` when all other sources are coded or explicitly allowed partials.
+Otherwise the existing status and error precedence applies. With no coded or
+pending source, the existing aggregation is preserved, including mixtures of
+`DISPLAYED` and empty `INVALID`: there is no automatic zero score or `x_x`.
+
+Replacement happens only inside this derivation; original source status, value,
+code and score remain unchanged. The replacement contribution is score `0` for
+`SUM_SCORE`, code `0` for `SUM_CODE`, and the text placeholder `x` for
+`CONCAT_CODE`. Thus `0_x` differs from two genuinely coded zeros (`0_0`). The
+placeholder is part of the derived text value, not a new code ID. Sorting also
+applies to placeholders when `SORT` is enabled. Other derivation methods,
+including the existing SOLVER policies, are unaffected.
 
 ### Types
 

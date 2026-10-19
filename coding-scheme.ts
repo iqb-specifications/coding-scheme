@@ -53,7 +53,7 @@ export const booleanRules = ['IS_TRUE', 'IS_FALSE'];
 export const DeriveConcatDelimiter = '_';
 
 export const CodingSchemeVersionMajor = 3;
-export const CodingSchemeVersionMinor = 4;
+export const CodingSchemeVersionMinor = 5;
 
 export class CodingScheme {
   variableCodings: VariableCodingData[] = [];

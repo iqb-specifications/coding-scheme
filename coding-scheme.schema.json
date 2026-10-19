@@ -1,5 +1,5 @@
 {
-  "$id": "coding-scheme@iqb-standard@3.4",
+  "$id": "coding-scheme@iqb-standard@3.5",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Coding Scheme",
   "description": "Data structure to specify all processing steps of response data in order to get coded and scored data for analyses.",
@@ -58,7 +58,7 @@
               },
               "processing": {
                 "type": "array",
-                "description": "Some options to change value or status",
+                "description": "Options to change value or status. TAKE_DISPLAYED_AS_ZERO_IF_PARTIAL and TAKE_EMPTY_AS_ZERO_IF_PARTIAL are opt-in options for SUM_SCORE, SUM_CODE and CONCAT_CODE. They replace DISPLAYED sources or empty INVALID sources (null, empty string, empty array), respectively, only within a derivation with at least one regularly coded source. Contributions are 0 for sums and x for concatenation. Pending sources remain pending; fully unprocessed or invalid sources alone do not trigger a calculation. Original source responses remain unchanged.",
                 "items": {
                   "type": "string",
                   "enum": [
@@ -69,6 +69,8 @@
                     "TAKE_DISPLAYED_AS_VALUE_CHANGED",
                     "TAKE_NOT_REACHED_AS_VALUE_CHANGED",
                     "TAKE_EMPTY_AS_VALID",
+                    "TAKE_DISPLAYED_AS_ZERO_IF_PARTIAL",
+                    "TAKE_EMPTY_AS_ZERO_IF_PARTIAL",
                     "SORT"
                   ]
                 }

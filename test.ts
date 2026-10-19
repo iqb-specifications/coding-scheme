@@ -5,8 +5,8 @@ import fs from 'fs';
 import { log, error } from "console";
 
 const ajv = new Ajv();
-const schemaFilename = process.argv[3];
-const testDataFolder = process.argv[4];
+const schemaFilename = process.argv[3] || `${__dirname}/coding-scheme.schema.json`;
+const testDataFolder = process.argv[4] || './test';
 
 describe(testDataFolder, () => {
   const schemaFileContent = fs.readFileSync(schemaFilename, 'utf8');
